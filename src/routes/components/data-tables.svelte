@@ -19,12 +19,21 @@
   }
 
   getData();
+
+  function handleDoubleRowClick(event) {
+    alert('row double click: ' + JSON.stringify(event.detail.index))
+  }
+  function handleRowClick(event) {
+    console.log(`row click: ${event.detail.index}`)
+  }
 </script>
 
 <div class="overflow-auto p-1">
   <DataTable
     {data}
     {loading}
+    on:dblclick={(event) => handleDoubleRowClick(event)}
+    on:click={(event) => handleRowClick(event)}
     on:update={({ detail }) => {
       const { column, item, value } = detail;
 

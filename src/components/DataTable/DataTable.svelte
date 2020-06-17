@@ -92,6 +92,8 @@
           {editable}
           {editableClasses}
           on:update
+          on:click
+          on:dblclick
         />
       </slot>
     {/each}

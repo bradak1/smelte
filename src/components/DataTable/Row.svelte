@@ -45,7 +45,11 @@
 
 <tr
   class={c}
+  on:dblclick={(e) => {
+  dispatch("dblclick", {index})
+  }}
   on:click={(e) => {
+  dispatch("click", {index})
   if (!editable) return;
     editing = { [index]: (e.path.find(a => a.localName === "td") || {}).cellIndex }
   }}
